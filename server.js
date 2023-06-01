@@ -1,10 +1,12 @@
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 require('dotenv').config()
 
 
 const questionnaireData = require('./questions/questions_js')
 const { success } = require('./helper')
+app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 4001
 let message = ``
